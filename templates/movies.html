@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Movies</h1>
+<div class="table-responsive">
+    <table class="table table-hover table-light table-striped table-borderless">
+      <thead class="table-dark">
+          <th>FilmID</th>
+          <th>Title</th>
+          <th>YearReleased</th>
+          <th>Rating</th>
+          <th>Duration</th>
+          <th>Genre</th>        
+      </thead>
+    <tbody >
+{% for row in revokeFilm %}    
+        <tr>
+            <td>{{row["filmID"]}}</td>
+            <td>{{row["title"]}}</td>
+            <td>{{row["yearReleased"]}}</td>
+            <td>{{row["rating"]}}</td>
+            <td>{{row["duration"]}}</td>
+            <td>{{row["genre"]}}</td>
+        </tr>
+        <td class="buttonTd">
+            <button type="submit" class="btn btn-dark" >
+                <a class="btnA" href="{{url_for('updatemovie',filmID= row ['filmID'] )}}">Update</a>
+            
+            </button>
+            <form class="deleteBtn" action="{{url_for('delete',filmID=row ['filmID'])}}" method="POST" >
+                <input type="submit" class="btn btn-dark" value="Delete" onclick=" return confirm ('Please confirm to delete')">
+            </form>
+            {% endfor %}
+        </td>
+    </tbody>
+   
+    </table>
+  </div>
+
+{% endblock content %}

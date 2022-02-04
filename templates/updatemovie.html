@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Update Movie</h1>
+{% block title %}  {% endblock %}
+<form action="" method="post" class="addMovie">
+<div class="col-lg">
+    <label for="formGroupExampleInput" class="form-label">Title</label>
+    <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="{{request.form[title] or movieRecord['title']}}">
+  </div>
+  <div class="col-lg">
+    <label for="formGroupExampleInput2" class="form-label">Year Released</label>
+    <input type="text" class="form-control" name="yearReleased" id="yearReleased" placeholder="Year Released" value="{{request.form[yearReleased] or movieRecord['yearReleased']}}">
+  </div>
+  <div class="col-lg">
+    <label for="formGroupExampleInput" class="form-label">Rating</label>
+    <input type="text" class="form-control" name="rating" id="rating" placeholder="Rating" value="{{request.form[rating] or movieRecord['rating']}}">
+  </div>
+  <div class="col-lg">
+    <label for="formGroupExampleInput2" class="form-label">Duration</label>
+    <input type="text" class="form-control" name="duration" id="duration" placeholder="Duration" value="{{request.form[duration] or movieRecord['duration']}}">
+  </div>
+  <div class="col-lg">
+    <label for="formGroupExampleInput2" class="form-label">Genre</label>
+    <input type="text" class="form-control" name="genre" id="genre" placeholder="Genre" value="{{request.form[genre] or movieRecord['genre']}}">
+  </div>
+  <button type="submit" value="Update Movie" class="btn btn-dark">Update Movie</button>
+</form>
+{% endblock content %}

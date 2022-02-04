@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>Add Movie</h1>
+<form action="" method="post" class="addMovie">
+    <div class="col-lg">
+        <label for="formGroupExampleInput" class="form-label">Title</label>
+        <input type="text" class="form-control" name="title" id="title" placeholder="Title" value="{{request.form['title']}}">
+      </div>
+      <div class="col-lg">
+        <label for="formGroupExampleInput2" class="form-label">Year Released</label>
+        <input type="text" class="form-control" name="yearReleased" id="yearReleased" placeholder="Year Released" value="{{request.form[yearReleased]}}">
+      </div>
+      <div class="col-lg">
+        <label for="formGroupExampleInput" class="form-label">Rating</label>
+        <input type="text" class="form-control" name="rating" id="rating" placeholder="Rating" value="{{request.form[rating]}}">
+      </div>
+      <div class="col-lg">
+        <label for="formGroupExampleInput2" class="form-label">Duration</label>
+        <input type="text" class="form-control" name="duration" id="duration" placeholder="Duration" value="{{request.form[duration]}}">
+      </div>
+      <div class="col-lg">
+        <label for="formGroupExampleInput2" class="form-label">Genre</label>
+        <input type="text" class="form-control" name="genre" id="genre" placeholder="Genre" value="{{request.form[genre]}}">
+      </div>
+      <button type="submit" value="Add Movie" class="btn btn-dark">Add Movie</button>
+</form>
+{% endblock content %}
